@@ -54,11 +54,10 @@ nav .logout img {
 }
 
 article {
-    background-color: rgb(255, 255, 255);
-    width: 80%;
-    height: 90%;
+    height: 100%;
     margin-top: 6%;
     float: right;
+    padding: 20px;
 }
 
 article h1 {
@@ -73,7 +72,7 @@ aside {
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.925);
     float: left;
     position: fixed;
-    margin-top: 7.12%;
+    margin-top: 7%;
     overflow: auto;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -143,6 +142,63 @@ button.cetak {
     background-color: #001aff;
     width: 100%;
 }
+
+/* Custom CSS for new elements in the article */
+.info-umum, .gambar-klinik, .link-fitur {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.info-umum h3, .gambar-klinik h3, .link-fitur h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.info-umum p, .link-fitur p {
+    line-height: 1.6;
+    color: #7f8c8d;
+}
+
+.gambar-klinik img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gambar-klinik img:hover {
+    transform: scale(1.05);
+}
+
+.link-fitur ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.link-fitur ul li {
+    margin-bottom: 10px;
+}
+
+.link-fitur ul li a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.link-fitur ul li a:hover {
+    color: #2980b9;
+}
+
+
 footer {
     background-color: rgb(12, 12, 12);
     width: 80%;
@@ -169,12 +225,10 @@ footer .footer-right {
     min-height: 600px;
     height: 90%;
     border-radius: 8px;
-    background-color: rgb(184, 184, 184);
-    margin-top: 40px;
-    margin-left: 30px;
+    background-color: rgb(165, 165, 165);
+    margin-top: 20px;
     padding: 40px;
     box-shadow: 3px 2px 2px 0px rgba(0, 0, 0, 0.678);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .form-group {
     margin-bottom: 15px;

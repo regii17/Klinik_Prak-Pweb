@@ -2,7 +2,7 @@
 // Fungsi untuk menyimpan data ke dalam file
 function simpanData($nama, $usia, $poli, $tanggal, $alamat) {
     // Menentukan nama file
-    $namaFile = 'pendaftaran.txt';
+    $namaFile = '../pendaftaran.txt';
     
     // Membuka file dengan mode append
     $file = fopen($namaFile, 'a');

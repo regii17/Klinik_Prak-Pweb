@@ -33,8 +33,8 @@
             <div class="form">
                 <h1>LOGIN</h1>
                 <form method="post" action="cek-login.php">
-                    <h5>Username</h5>
-                    <input type="text" name="nama" placeholder="Username" required>
+                    <h5>Nama</h5>
+                    <input type="text" name="username" placeholder="Username" required>
                     <h5>Password</h5>
                     <input type="password" name="password" placeholder="Password" required>
                     <button name="btn" type="submit">LOGIN</button>

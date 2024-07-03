@@ -2,12 +2,12 @@
 session_start();
 
 // Memeriksa apakah pengguna sudah login
-if (!isset($_SESSION['nama'])) {
+if (!isset($_SESSION['username'])) {
     header("Location: ../index.php?pesan=belumlogin");
     exit();
 }
 
-$namaPengguna = $_SESSION['nama'];
+$namaPengguna = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@ $namaPengguna = $_SESSION['nama'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/zz.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Home - Mind Well</title>
 </head>
 <body style = "height : 550px">
