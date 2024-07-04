@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/s.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>RS</title>
 </head>
 <body>
     <?php
     if (isset($_GET['pesan'])) {
-        if ($_GET['pesan'] == "logout") {
+        if ($_GET['pesan'] == "nU4WG7zQw4FHZ6FmTFGktw") {
             echo"<script>alert('Berhasil Logout !!!')</script>
             ";
-        }
-        else if ($_GET['pesan'] == "belumlogin") {
+        }elseif ($_GET['pesan'] == "Le8ZIG5RppyvHSPqfgjUvQ") {
             echo"<script>alert('Silahkan Login Terlebih Dahulu')</script>
+            ";
+        }elseif ($_GET['pesan'] == "qk8YK03x0xXDJcdbOS5dBw") {
+            echo"<script>alert('Username Belum Terdaftar Atau Password Salah')</script>
             ";
         }
     }

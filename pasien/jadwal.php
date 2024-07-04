@@ -1,44 +1,34 @@
 <?php
 session_start();
-
-// Memeriksa apakah pengguna sudah login
 if (!isset($_SESSION['username'])) {
-    header("Location: ../index.php?pesan=belumlogin");
+    header("Location: ../index.php?pesan=Le8ZIG5RppyvHSPqfgjUvQ");
     exit();
 }
-
-// Mendapatkan nama pengguna dari sesi
 $namaPengguna = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-p.css">
     <title>Home - Mind Well</title>
 </head>
-<body style = "height : 550px">
+<body>
 <?php include 'nav.php'; ?>
 <?php include 'sidebar.php'; ?>
-    <article>
+<article>
     <?php
     if (isset($_GET['pesan'])) {
-        if ($_GET['pesan'] == "succesUpcv") {
-            echo"<script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil Menyimpan CV',
-                text: 'Anda telah berhasil menyimpan CV anda.',
-            });</script>
+        if ($_GET['pesan'] == "OGE3dzQwrzt1hTeMYQJTrw") {
+            echo"<script>alert('Pendaftaran Anda Berhasil Disimpan')</script>
             ";
         }
     }
     ?>
-        <div class="form">
-            <center>
+    <div class="form">
+        <center>
             <h1>Jadwal Konsultasi Anda</h1>
             <table>
                 <thead>
@@ -55,51 +45,45 @@ $namaPengguna = $_SESSION['username'];
                 </thead>
                 <tbody id="jobOffers">
                 <?php
-        // Menentukan nama file
-        $namaFile = '../pendaftaran.txt';
-        
-        // Memeriksa apakah file ada
-        if (file_exists($namaFile)) {
-            // Membuka file dengan mode read
-            $file = fopen($namaFile, 'r');
-            
-            // Membaca isi file baris per baris
-            $no=1;
-            while (($line = fgets($file)) !== false) {
-                // Memecah data berdasarkan |
-                $data = explode('|', $line);
-                
-                // Memastikan jumlah elemen dalam data sesuai
-                if (count($data) == 5) {
-                    $nama = htmlspecialchars(trim($data[0]));
-                    if ($nama == $namaPengguna) {
-                        echo "<tr>";
-                        echo "<td>" . $no . "</td>";
-                        echo "<td>" . $nama . "</td>";
-                        echo "<td>" . htmlspecialchars(trim($data[1])) . "</td>";
-                        echo "<td>" . htmlspecialchars(trim($data[2])) . "</td>";
-                        echo "<td>" . htmlspecialchars(trim($data[3])) . "</td>";
-                        echo "<td>" . htmlspecialchars(trim($data[4])) . "</td>";
-                        echo "<td><center>" . $no . "</center></td>";
-                        echo"<td><center><button class='cetak'>Cetak</button></center></td>";
-                        echo "</tr>";
+                $namaFile = '../pendaftaran.txt';
+                if (file_exists($namaFile)) {
+                    $file = fopen($namaFile, 'r');
+                    $adaData = false;
+                    $no = 1;
+                    while (($line = fgets($file)) !== false) {
+                        $data = explode('|', $line);
+                        if (count($data) == 6) {
+                            $nama = htmlspecialchars(trim($data[0]));
+                            if ($nama == $namaPengguna) {
+                                $adaData = true;
+                                echo "<tr>";
+                                echo "<td>" . $no . "</td>";
+                                echo "<td>" . $nama . "</td>";
+                                echo "<td>" . htmlspecialchars(trim($data[1])) . "</td>";
+                                echo "<td>" . htmlspecialchars(trim($data[2])) . "</td>";
+                                echo "<td>" . htmlspecialchars(trim($data[3])) . "</td>";
+                                echo "<td>" . htmlspecialchars(trim($data[4])) . "</td>";
+                                echo "<td>" . htmlspecialchars(trim($data[5])) . "</td>";
+                                echo "<td><center><button class='cetak'>Cetak</button></center></td>";
+                                echo "</tr>";
+                                $no++;
+                            }
+                        }
                     }
+                    fclose($file);
+                    if (!$adaData) {
+                        echo "<tr><td colspan='8'><center>Anda belum memiliki riwayat pendaftaran.</center></td></tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='8'><center>Tidak ada data pendaftaran.</center></td></tr>";
                 }
-                $no++;
-            }
-            
-            // Menutup file
-            fclose($file);
-        } else {
-            echo "<tr><td colspan='4'>Tidak ada data pendaftaran.</td></tr>";
-        }
-        ?>
+                ?>
                 </tbody>
             </table>
-            </center>
-        </div>
-    </article>
-    <?php include 'footer.php'; ?>
-    <script src="assets/js/script.js"></script>  
+        </center>
+    </div>
+</article>
+<?php include 'footer.php'; ?>
+<script src="assets/js/script.js"></script>  
 </body>
 </html>

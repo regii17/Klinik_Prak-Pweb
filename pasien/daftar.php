@@ -1,28 +1,24 @@
 <?php
 session_start();
-
-// Memeriksa apakah pengguna sudah login
 if (!isset($_SESSION['username'])) {
-    header("Location: ../index.php?pesan=belumlogin");
+    header("Location: ../index.php?pesan=Le8ZIG5RppyvHSPqfgjUvQ");
     exit();
 }
-
 $namaPengguna = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-p.css">
     <title>Home - Mind Well</title>
 </head>
-<body style = "height : 550px">
+<body>
 <?php include 'nav.php'; ?>
 <?php include 'sidebar.php'; ?>
-    <article>
+<article>
     <?php
     if (isset($_GET['pesan'])) {
         if ($_GET['pesan'] == "succesUpcv") {
@@ -36,7 +32,7 @@ $namaPengguna = $_SESSION['username'];
         }
     }
     ?>
-         <div class="form">
+    <div class="form">
         <div class="form-container">
             <center>
                 <br>
@@ -44,7 +40,7 @@ $namaPengguna = $_SESSION['username'];
                 <br>
                 <hr>
             </center>
-            <br>
+                <br>
             <form action="proses.php" method = "post">
                 <div class="form-group">
                     <label for="nama-pekerjan">Nama Pasien:</label>
@@ -81,9 +77,9 @@ $namaPengguna = $_SESSION['username'];
                 </div>
             </form>
         </div>
-        </div>
-    </article>
-    <?php include 'footer.php'; ?>
-    <script src="assets/js/script.js"></script>  
+    </div>
+</article>
+<?php include 'footer.php'; ?>
+<script src="assets/js/script.js"></script>  
 </body>
 </html>

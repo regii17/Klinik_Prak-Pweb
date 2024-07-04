@@ -4,12 +4,8 @@
             <img src="assets/img/home.png" alt="">
             <b><p>Beranda</p></b>
         </a>
-        <a href="jadwal.php">
+        <a href="pasien.php">
             <img src="assets/img/jadwal.png" alt="">
-            <b><p>Jadwal Konsultasi</p></b>
-        </a>
-        <a href="daftar.php">
-            <img src="assets/img/daftar.png" alt="">
-            <b><p>Daftar Konsultasi</p></b>
+            <b><p>Daftar Pasien</p></b>
         </a>
 </aside>

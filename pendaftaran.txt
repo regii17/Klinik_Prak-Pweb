@@ -1,1 +1,8 @@
-regiana hermawan|19|p|2024-07-03|skmj
+regiana hermawan|11|Dalam|2024-04-11|skmj|1
+regiana hermawan|20|Bedah|2024-07-04|akuu|1
+r|20|Bedah|2024-07-04|akuu|2
+regiana hermawan|11|Anak|2024-07-04|dsad|2
+r|21|Dalam|2024-07-04|akuu|3
+r|21|Dalam|2024-07-04|skmj|4
+r|22|Kandungan|2024-07-04|skmj|1
+r|22|THT|2024-07-04|akuu|1

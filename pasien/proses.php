@@ -1,32 +1,38 @@
 <?php
-// Fungsi untuk menyimpan data ke dalam file
-function simpanData($nama, $usia, $poli, $tanggal, $alamat) {
-    // Menentukan nama file
+function getNomorUrutTerakhir($tanggal, $poli) {
     $namaFile = '../pendaftaran.txt';
-    
-    // Membuka file dengan mode append
+    $nomorUrut = 0;
+    if (file_exists($namaFile)) {
+        $file = fopen($namaFile, 'r');
+        while (($line = fgets($file)) !== false) {
+            $data = explode('|', $line);
+            if (count($data) == 6 && trim($data[3]) == $tanggal && trim($data[2]) == $poli) {
+                $nomorUrut = (int)trim($data[5]);
+            }
+        }
+        fclose($file);
+    }
+    return $nomorUrut;
+}
+
+function simpanData($nama, $usia, $poli, $tanggal, $alamat) {
+    $namaFile = '../pendaftaran.txt';
+    $nomorUrutTerakhir = getNomorUrutTerakhir($tanggal, $poli);
+    $nomorUrutBaru = $nomorUrutTerakhir + 1;
     $file = fopen($namaFile, 'a');
-    
-    // Menulis data ke dalam file dengan pemisah |
-    $data = "$nama|$usia|$poli|$tanggal|$alamat\n";
+    $data = "$nama|$usia|$poli|$tanggal|$alamat|$nomorUrutBaru\n";
     fwrite($file, $data);
-    
-    // Menutup file
     fclose($file);
 }
 
-// Memeriksa apakah form telah disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Mengambil data dari form
     $nama = $_POST['nama'];
     $usia = $_POST['usia'];
     $poli = $_POST['poli'];
     $tanggal = $_POST['tanggal'];
     $alamat = $_POST['alamat'];
-    
-    // Menyimpan data ke dalam file
     simpanData($nama, $usia, $poli, $tanggal, $alamat);
     
-    echo "Data berhasil disimpan. <a href='jadwal.php'>Lihat data</a>";
+    header("Location: jadwal.php?pesan=t57aPuE/IDtiFa6ie/S+hQ==");
 }
 ?>

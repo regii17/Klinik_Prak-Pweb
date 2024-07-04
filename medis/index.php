@@ -1,21 +1,19 @@
 <?php
 session_start();
-
-// Memeriksa apakah pengguna sudah login
 if (!isset($_SESSION['username'])) {
-    header("Location: ../index.php?pesan=belumlogin");
+    header("Location: ../index.php?pesan=Le8ZIG5RppyvHSPqfgjUvQ");
     exit();
 }
-
 $namaPengguna = $_SESSION['username'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-m.css">
     <title>Home - Mind Well</title>
 </head>
 <body >
@@ -24,23 +22,13 @@ $namaPengguna = $_SESSION['username'];
     <article>
         <div class="form">
         <h2>Selamat Datang, <?php echo $namaPengguna; ?></h2>
-            <p>Selamat datang di aplikasi klinik kesehatan kami. Di sini Anda bisa melakukan berbagai hal seperti melihat jadwal janji temu, memeriksa riwayat medis, dan melihat informasi dokter.</p>
+            <p>Selamat datang kembali. Terus semangat dan tetaplah berhati hati demi kesehatan bangsa dan negara</p>
             <br>
             <br>
-            <!-- Informasi Umum -->
             <section class="info-umum">
                 <h3>Informasi Umum</h3>
-                <p>Aplikasi klinik kesehatan kami membantu Anda untuk mengelola kesehatan dengan lebih baik. Anda dapat membuat janji temu dengan dokter, melihat riwayat medis, dan mendapatkan informasi kesehatan terbaru.</p>
+                <p>Selamat!! Anda telah menyelesaikan 2000 jam pekerjaan</p>
             </section>
-
-            <!-- Gambar Klinik -->
-            <section class="gambar-klinik">
-                <h3>Gambar Klinik</h3>
-                <img src="assets/img/rs.jpeg" alt="Gambar Klinik 1">
-                <img src="assets/img/rs.jpeg" alt="Gambar Klinik 2">
-            </section>
-
-            <!-- Link ke Fitur-Fitur -->
             <section class="link-fitur">
                 <h3>Jelajahi Fitur Kami</h3>
                 <ul>
@@ -49,7 +37,6 @@ $namaPengguna = $_SESSION['username'];
                     <li><a href="#">Informasi Dokter</a></li>
                 </ul>
             </section>
-            
         </div>
     </article>
     <?php include 'footer.php'; ?>
